@@ -42,6 +42,7 @@ class _HomeState extends State<Home> {
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Colors.orangeAccent,
         index: _currentIndex,
         height: 50.0,
         items: <Widget>[
