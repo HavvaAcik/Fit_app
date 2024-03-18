@@ -35,15 +35,17 @@ class BlogPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Container(
-                    width: MediaQuery.of(context).size.width * 0.5, // Genişlik ayarı
+                    width: MediaQuery.of(context).size.width *
+                        0.5, // Genişlik ayarı
                     child: DropdownButton<String>(
-                      isExpanded: true, // Bu, DropDownButton'ın yatay olarak tamamen genişlemesini sağlar
+                      isExpanded:
+                          true, // Bu, DropDownButton'ın yatay olarak tamamen genişlemesini sağlar
                       hint: Text('Filtrele'),
                       onChanged: (String? newValue) {
-                        // Filtreleme işlemleri burada 
+                        // Filtreleme işlemleri burada
                         print('Filtre: $newValue');
                       },
-                      items: <String>['Sağlık', 'Spor','Diyet', 'Oruç']
+                      items: <String>['Sağlık', 'Spor', 'Diyet', 'Oruç']
                           .map<DropdownMenuItem<String>>((String value) {
                         return DropdownMenuItem<String>(
                           value: value,
@@ -60,28 +62,37 @@ class BlogPage extends StatelessWidget {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => KartDetaySayfasi(title: 'Kart 1 Detayı')),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          KartDetaySayfasi(title: 'Kart 1 Detayı')),
                 );
               },
-              child: buildCard('Bu bir karttır. Kart 1 için özel içerik burada yer alacak.'),
+              child: buildCard(
+                  'Bu bir karttır. Kart 1 için özel içerik burada yer alacak.'),
             ),
             InkWell(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => KartDetaySayfasi(title: 'Kart 2 Detayı')),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          KartDetaySayfasi(title: 'Kart 2 Detayı')),
                 );
               },
-              child: buildCard('Bu bir karttır. Kart 2 için özel içerik burada yer alacak.'),
+              child: buildCard(
+                  'Bu bir karttır. Kart 2 için özel içerik burada yer alacak.'),
             ),
             InkWell(
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => KartDetaySayfasi(title: 'Kart 3 Detayı')),
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          KartDetaySayfasi(title: 'Kart 3 Detayı')),
                 );
               },
-              child: buildCard('Bu bir karttır. Kart 3 için özel içerik burada yer alacak.'),
+              child: buildCard(
+                  'Bu bir karttır. Kart 3 için özel içerik burada yer alacak.'),
             ),
           ],
         ),
@@ -92,13 +103,19 @@ class BlogPage extends StatelessWidget {
   Widget buildCard(String content) {
     return Container(
       height: 200,
-      child: Card(
-        margin: EdgeInsets.all(16),
-        child: Center(
-          child: Text(
-            content,
-            style: TextStyle(fontSize: 16),
-            textAlign: TextAlign.center,
+      child: Container(
+        color: Colors.white,
+        child: Card(    
+          color: Colors.white,
+          elevation: 10, 
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+          margin: EdgeInsets.all(16),
+          child: Center(
+            child: Text(
+              content,
+              style: TextStyle(fontSize: 16),
+              textAlign: TextAlign.center,
+            ),
           ),
         ),
       ),
